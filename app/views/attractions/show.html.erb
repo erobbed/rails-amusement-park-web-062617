@@ -15,7 +15,7 @@
 <% if @user.admin %>
     <%= link_to "Edit Attraction", edit_attraction_path %>
   <% else %>
-  <%= flash[:notice] %>
+  <%= flash[:message] %>
   <%= form_for @ride do |f| %>
     <%= f.hidden_field :attraction_id  %>
     <%= f.submit "Go on this ride" %>
