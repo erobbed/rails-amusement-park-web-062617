@@ -1,12 +1,11 @@
 class AttractionsController < ApplicationController
+  before_action :current_user
 
   def index
     @attractions = Attraction.all
-    @user = User.find_by(id: session[:user_id])
   end
 
   def new
-    @attraction = Attraction.new
   end
 
   def create
@@ -16,15 +15,15 @@ class AttractionsController < ApplicationController
 
   def show
     @attraction = Attraction.find(params[:id])
-    @user = User.find_by(id: session[:user_id])
     @ride = Ride.new(attraction: @attraction)
   end
 
   def edit
-    @attraction = Attraction.find(params[:id])
+    @attraction = Attraction.find_by(id: params[:id])
   end
 
   def update
+    # binding.pry
     @attraction = Attraction.find(params[:id])
     @attraction.update(attraction_params)
     redirect_to attraction_path(@attraction)

@@ -7,7 +7,7 @@
 <% end %>
 Height: <%= @user.height %><br>
 Mood: <%= @user.mood %> <br>
-Tickets: <%= @user.tickets %><br>
+Tickets: <%= @user.tickets %><br><br>
 <%= link_to 'See attractions', attractions_path %><br>
-<%= link_to "Edit", edit_user_path(@user) %>
+<%= link_to "Edit", edit_user_path(@user) %><br>
 <%= link_to "Log Out", '/signout', method: :delete %>

@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def new
-    @user = User.new
   end
 
   def create
@@ -11,12 +10,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: session[:user_id])
+    current_user
     return redirect_to home_path flash[:message] ='login failed!' unless session.include?(:user_id)
   end
 
   def edit
-    @user = User.find_by(id: session[:user_id])
+    current_user
   end
 
   private

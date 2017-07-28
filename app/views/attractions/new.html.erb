@@ -1,4 +1,4 @@
-<%= form_for @attraction do |f| %>
+<%= form_for :attraction, url: '/attractions' do |f| %>
 <%= f.label :name %><br>
 <%= f.text_field :name %><br><br>
 <%= f.label :nausea_rating %><br>
@@ -9,5 +9,5 @@
 <%= f.text_field :tickets %><br><br>
 <%= f.label :min_height %><br>
 <%= f.text_field :min_height %><br><br>
-<%= f.submit %>
+<%= f.submit "Create Attraction" %>
 <% end %>

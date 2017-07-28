@@ -9,6 +9,7 @@ class Ride < ActiveRecord::Base
       self.user.happiness += self.attraction.happiness_rating
       self.user.nausea += self.attraction.nausea_rating
       self.user.save
+      # self.user_id <<
       "Thanks for riding the #{self.attraction.name}!"
     else
       if self.height? == false && self.tickets? == false

@@ -14,7 +14,7 @@ get '/attractions/:id/edit', to: 'attractions#edit', as: 'edit_attraction'
 patch '/attractions/:id', to: 'attractions#update'
 get '/signin', to: 'sessions#new', as: 'login'
 post '/sessions', to: 'sessions#create'
-delete '/signout', to: 'sessions#destroy'
+delete '/signout', to: 'sessions#destroy', as: 'logout'
 post '/rides', to: 'rides#new'
 
 
